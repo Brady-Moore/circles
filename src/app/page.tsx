@@ -1,3 +1,5 @@
+import ColorThemeToggle from "@/components/ColorThemeToggle";
+import { Button } from "@/components/ui/button";
 import {
   SignedIn,
   SignedOut,
@@ -11,13 +13,14 @@ export default function Home() {
     <div>
       <SignedOut>
         <SignInButton mode="modal">
-          <button className="bg-amber-400">Custom Sign In Button</button>
+          <Button>Sign In</Button>
         </SignInButton>
         {/* <SignUpButton mode="modal" /> */}
       </SignedOut>
       <SignedIn>
         <UserButton />
       </SignedIn>
+      <ColorThemeToggle />
     </div>
   );
 }
