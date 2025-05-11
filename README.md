@@ -1,3 +1,7 @@
+### Circles Social Media App
+
+A social media app that allows users to post comments, share screen shots, and other common social media functions.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
