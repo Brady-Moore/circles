@@ -38,7 +38,7 @@ async function FollowSuggestions() {
                   </p>
                 </div>
               </div>
-              <FollowButton />
+              <FollowButton userId={user.id} />
             </div>
           ))}
         </div>
