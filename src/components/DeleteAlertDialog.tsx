@@ -1,10 +1,14 @@
 "use client";
 
-import { AlertDialog, AlertDialogTitle } from "@radix-ui/react-alert-dialog";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
+  AlertDialogFooter,
   AlertDialogHeader,
+  AlertDialogTitle,
   AlertDialogTrigger,
 } from "./ui/alert-dialog";
 import { Button } from "./ui/button";
@@ -43,6 +47,16 @@ export function DeleteAlertDialog({
           <AlertDialogTitle>{title}</AlertDialogTitle>
           <AlertDialogDescription>{description}</AlertDialogDescription>
         </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction
+            onClick={onDelete}
+            className="bg-red-500 hover:bg-red-600"
+            disabled={isDeleting}
+          >
+            {isDeleting ? "Deleting..." : "Delete"}
+          </AlertDialogAction>
+        </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
   );
