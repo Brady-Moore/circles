@@ -1,8 +1,14 @@
 "use client";
 
-import { getPosts, toggleLike } from "@/actions/post";
+import {
+  createComment,
+  deletePost,
+  getPosts,
+  toggleLike,
+} from "@/actions/post";
 import { useUser } from "@clerk/nextjs";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
 type Post = Posts[number];
@@ -39,9 +45,38 @@ function PostCard({
     }
   };
 
-  const handleAddComment = async () => {};
+  const handleAddComment = async () => {
+    if (!newComment.trim() || isCommenting) return;
+    try {
+      setIsCommenting(true);
+      const result = await createComment(post.id, newComment);
+      if (result?.success) {
+        toast.success("Comment posted successfully");
+        setNewComment("");
+      }
+    } catch (error) {
+      toast.error("Failed to add comment");
+    } finally {
+      setIsCommenting(false);
+    }
+  };
 
-  const handleDeletePost = async () => {};
+  const handleDeletePost = async () => {
+    if (isDeleting) return;
+    try {
+      setIsDeleting(true);
+      const result = await deletePost(post.id);
+      if (result.success) {
+        toast.success("Post deleted successfully");
+      } else {
+        throw new Error(result.error);
+      }
+    } catch (error) {
+      toast.error("Failed to delete post");
+    } finally {
+      setIsDeleting(false);
+    }
+  };
 
   return <div>PostCard</div>;
 }
