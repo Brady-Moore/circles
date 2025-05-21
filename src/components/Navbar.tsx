@@ -1,6 +1,6 @@
 import Link from "next/link";
 import DesktopNavbar from "./DesktopNavbar";
-import MobileNavbar from "./ui/MobileNavbar";
+import MobileNavbar from "./MobileNavbar";
 import { currentUser } from "@clerk/nextjs/server";
 import { syncUser } from "@/actions/user";
 
