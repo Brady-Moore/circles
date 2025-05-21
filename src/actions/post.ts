@@ -28,7 +28,7 @@ export async function createPost(content: string, imageUrl: string) {
 
 export async function getPosts() {
   try {
-    const posts = prisma.post.findMany({
+    const posts = await prisma.post.findMany({
       orderBy: {
         createdAt: "desc",
       },
@@ -176,7 +176,7 @@ export async function createComment(postId: string, content: string) {
       return [newComment];
     });
 
-    revalidatePath(`/posts/${postId}`);
+    revalidatePath(`/`);
     return { success: true, comment };
   } catch (error) {
     console.error("Failed to create comment:", error);
@@ -195,7 +195,7 @@ export async function deletePost(postId: string) {
 
     if (!post) throw new Error("Post not found");
     if (post.authorId !== userId)
-      throw new Error("Unauthorized - user doesn't have delete permissions");
+      throw new Error(`Unauthorized - user doesn't have delete permissions`);
 
     await prisma.post.delete({
       where: { id: postId },
