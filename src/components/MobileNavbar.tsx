@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import {
+  BellIcon,
   HomeIcon,
   LogOutIcon,
   MenuIcon,
@@ -60,6 +61,16 @@ function MobileNavbar() {
             </Button>
             {isSignedIn ? (
               <>
+                <Button
+                  variant="ghost"
+                  className="flex items-center gap-3 justify-start"
+                  asChild
+                >
+                  <Link href="/notifications">
+                    <BellIcon className="w-4 h-4" />
+                    Notifications
+                  </Link>
+                </Button>
                 <Button
                   variant="ghost"
                   className="flex items-center gap-3 justify-start"
