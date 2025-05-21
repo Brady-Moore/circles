@@ -15,7 +15,12 @@ import { Avatar, AvatarImage } from "./ui/avatar";
 import { formatDistanceToNow } from "date-fns";
 import { DeleteAlertDialog } from "./DeleteAlertDialog";
 import { Button } from "./ui/button";
-import { HeartIcon, MessageCircleIcon, SendIcon } from "lucide-react";
+import {
+  HeartIcon,
+  LogInIcon,
+  MessageCircleIcon,
+  SendIcon,
+} from "lucide-react";
 import { Textarea } from "./ui/textarea";
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
@@ -106,13 +111,13 @@ function PostCard({
                     href={`/profile/${post.author.username}`}
                     className="font-semibold truncate"
                   >
-                    {post.author.username}
+                    {post.author.name}
                   </Link>
                   <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                     <Link href={`/profile/${post.author.username}`}>
                       @{post.author.username}
                     </Link>
-                    <span>.</span>
+                    <span>•</span>
                     <span>
                       {formatDistanceToNow(new Date(post.createdAt))} ago
                     </span>
@@ -133,7 +138,7 @@ function PostCard({
 
           {/* IMAGE CONTENT */}
           {post.image && (
-            <div>
+            <div className="rounded-lg overflow-hidden">
               <img
                 src={post.image}
                 alt="Image Post content"
@@ -209,7 +214,7 @@ function PostCard({
                         <span className="text-sm text-muted-foreground">
                           @{comment.author.username}
                         </span>
-                        <span className="text-sm text-muted-foreground">.</span>
+                        <span className="text-sm text-muted-foreground">·</span>
                         <span className="text-sm text-muted-foreground">
                           {formatDistanceToNow(new Date(comment.createdAt))} ago
                         </span>
@@ -221,7 +226,7 @@ function PostCard({
               </div>
 
               {user ? (
-                <div className="flefx space-x-3">
+                <div className="flex space-x-3">
                   <Avatar className="size-8 flex-shrink-0">
                     <AvatarImage src={user?.imageUrl || "/avatar.png"} />
                   </Avatar>
@@ -251,7 +256,16 @@ function PostCard({
                     </div>
                   </div>
                 </div>
-              ) : null}
+              ) : (
+                <div className="flex justify-center p-4 border rounded-lg bg-muted/50">
+                  <SignInButton mode="modal">
+                    <Button variant="outline" className="gap-2">
+                      <LogInIcon className="size-4" />
+                      Sign in to comment
+                    </Button>
+                  </SignInButton>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -259,5 +273,4 @@ function PostCard({
     </Card>
   );
 }
-
 export default PostCard;
