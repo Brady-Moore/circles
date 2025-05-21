@@ -3,7 +3,7 @@
 import { SignInButton, SignOutButton, useAuth } from "@clerk/nextjs";
 import { useTheme } from "next-themes";
 import { useState } from "react";
-import { Button } from "./button";
+import { Button } from "./ui/button";
 import {
   HomeIcon,
   LogOutIcon,
@@ -18,7 +18,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./sheet";
+} from "./ui/sheet";
 import Link from "next/link";
 
 function MobileNavbar() {
