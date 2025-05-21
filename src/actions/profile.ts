@@ -62,7 +62,7 @@ export async function getUserPosts(userId: string) {
             },
           },
           orderBy: {
-            createdAt: "desc",
+            createdAt: "asc",
           },
         },
         likes: {
@@ -189,5 +189,8 @@ export async function isFollowing(userId: string) {
     });
 
     return !!follow;
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error checking follow status:", error);
+    return false;
+  }
 }
