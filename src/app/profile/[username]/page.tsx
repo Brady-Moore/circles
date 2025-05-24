@@ -1,5 +1,3 @@
-"use server";
-
 import {
   getProfileByUsername,
   getUserLikedPosts,
