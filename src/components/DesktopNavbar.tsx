@@ -1,6 +1,6 @@
 import { currentUser } from "@clerk/nextjs/server";
-import ColorThemeToggle from "../ColorThemeToggle";
-import { Button } from "./button";
+import ColorThemeToggle from "./ColorThemeToggle";
+import { Button } from "./ui/button";
 import Link from "next/link";
 import { BellIcon, HomeIcon, UserIcon } from "lucide-react";
 import { SignInButton, UserButton } from "@clerk/nextjs";

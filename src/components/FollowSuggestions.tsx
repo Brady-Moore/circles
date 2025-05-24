@@ -31,7 +31,9 @@ async function FollowSuggestions() {
                   <Link
                     href={`/profile/${user.username}`}
                     className="font-medium cursor-pointer"
-                  ></Link>
+                  >
+                    {user.name}
+                  </Link>
                   <p className="text-muted-foreground">@{user.username}</p>
                   <p className="text-muted-foreground">
                     {user._count.followers} followers

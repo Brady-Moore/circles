@@ -29,7 +29,6 @@ import {
   EditIcon,
   FileTextIcon,
   HeartIcon,
-  Key,
   LinkIcon,
   MapPinIcon,
 } from "lucide-react";
@@ -65,8 +64,8 @@ function ProfilePageClient({
 
   const handleEditSubmit = async () => {
     const formData = new FormData();
-    Object.entries(editForm).forEach(([Key, value]) => {
-      formData.append(Key, value);
+    Object.entries(editForm).forEach(([key, value]) => {
+      formData.append(key, value);
     });
 
     const result = await updateProfile(formData);
@@ -182,7 +181,7 @@ function ProfilePageClient({
                         href={
                           user.website.startsWith("http")
                             ? user.website
-                            : `http://${user.website}`
+                            : `https://${user.website}`
                         }
                         className="hover:underline"
                         target="_blank"

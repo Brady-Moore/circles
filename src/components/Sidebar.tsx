@@ -15,8 +15,6 @@ async function Sidebar() {
   const user = await getUserByClerkId(authUser.id);
   if (!user) return null;
 
-  console.log(user);
-
   return (
     <div className="sticky top-20">
       <Card>
@@ -97,14 +95,13 @@ const UnauthenticatedSidebar = () => (
         <p className="text-center text-muted-foreground mb-4">
           Log in to view your profile and connect with others on Circles.
         </p>
-
         <SignInButton mode="modal">
           <Button className="w-full mx-auto" variant="outline">
             Log In
           </Button>
         </SignInButton>
         <SignUpButton mode="modal">
-          <Button className="w-full mt-2 mx-auto" variant="default">
+          <Button className="w-full mt-2" variant="default">
             Sign Up
           </Button>
         </SignUpButton>
