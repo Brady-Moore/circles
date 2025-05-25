@@ -29,8 +29,10 @@ async function Sidebar() {
               </Avatar>
 
               <div className="mt-4 space-y-1">
-                <h3 className="font-semibold">{user.name}</h3>
-                <p className="text-sm text-muted-foreground">{user.username}</p>
+                <h3 className="font-semibold hover:underline">{user.name}</h3>
+                <p className="text-sm text-muted-foreground">
+                  @{user.username}
+                </p>
               </div>
             </Link>
 

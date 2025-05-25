@@ -30,7 +30,7 @@ async function FollowSuggestions() {
                 <div className="text-xs">
                   <Link
                     href={`/profile/${user.username}`}
-                    className="font-medium cursor-pointer"
+                    className="font-medium cursor-pointer hover:underline"
                   >
                     {user.name}
                   </Link>
