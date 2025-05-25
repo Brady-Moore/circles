@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import FollowButton from "./FollowButton";
+import { userHandle } from "../../utils/format";
 
 async function FollowSuggestions() {
   const users = await getRandomUsers();
@@ -34,7 +35,9 @@ async function FollowSuggestions() {
                   >
                     {user.name}
                   </Link>
-                  <p className="text-muted-foreground">@{user.username}</p>
+                  <p className="text-muted-foreground">
+                    {userHandle(user.username)}
+                  </p>
                   <p className="text-muted-foreground">
                     {user._count.followers} followers
                   </p>
