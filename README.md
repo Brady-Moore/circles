@@ -2,7 +2,7 @@
 
 A social media app that allows users to post comments, share screen shots, and other common social media functions.
 
-![Netlify](90b45ef8-56d3-435a-a40f-4884f577b07e)
+![Netlify](https://img.shields.io/netlify/90b45ef8-56d3-435a-a40f-4884f577b07e)
 
 ## Built With
 
