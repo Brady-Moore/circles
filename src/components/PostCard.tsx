@@ -236,6 +236,7 @@ function PostCard({
                       value={newComment}
                       onChange={(e) => setNewComment(e.target.value)}
                       className="min-h-[80px] resize-none"
+                      autoFocus
                     />
                     <div className="flex justify-end mt-2">
                       <Button
