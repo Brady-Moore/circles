@@ -11,7 +11,7 @@ export async function syncUser() {
 
     if (!userId || !user) return;
 
-    const existingUser = await prisma.user.findUnique({
+    let existingUser = await prisma.user.findUnique({
       where: {
         clerkId: userId,
       },
@@ -29,6 +29,21 @@ export async function syncUser() {
         image: user.imageUrl,
       },
     });
+
+    const maxTries = 5;
+    let tryCount = 0;
+    let timeout = 10;
+
+    while (!existingUser && tryCount < maxTries) {
+      existingUser = await prisma.user.findUnique({
+        where: {
+          clerkId: userId,
+        },
+      });
+      tryCount++;
+      await new Promise((r) => setTimeout(r, timeout));
+      timeout *= 2;
+    }
 
     return dbUser;
   } catch (error) {
