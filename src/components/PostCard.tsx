@@ -22,6 +22,7 @@ import {
   SendIcon,
 } from "lucide-react";
 import { Textarea } from "./ui/textarea";
+import { userHandle } from "../../utils/format";
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
 type Post = Posts[number];
@@ -115,7 +116,7 @@ function PostCard({
                   </Link>
                   <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                     <Link href={`/profile/${post.author.username}`}>
-                      @{post.author.username}
+                      {userHandle(post.author.username)}
                     </Link>
                     <span>•</span>
                     <span>
@@ -212,7 +213,7 @@ function PostCard({
                           {comment.author.name}
                         </span>
                         <span className="text-sm text-muted-foreground">
-                          @{comment.author.username}
+                          {userHandle(comment.author.username)}
                         </span>
                         <span className="text-sm text-muted-foreground">·</span>
                         <span className="text-sm text-muted-foreground">

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
 import { LinkIcon, MapPinIcon } from "lucide-react";
+import { userHandle } from "../../utils/format";
 
 async function Sidebar() {
   const authUser = await currentUser();
@@ -31,7 +32,7 @@ async function Sidebar() {
               <div className="mt-4 space-y-1">
                 <h3 className="font-semibold hover:underline">{user.name}</h3>
                 <p className="text-sm text-muted-foreground">
-                  @{user.username}
+                  {userHandle(user.username)}
                 </p>
               </div>
             </Link>

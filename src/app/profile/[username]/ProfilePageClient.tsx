@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { userHandle } from "../../../../utils/format";
 
 type User = Awaited<ReturnType<typeof getProfileByUsername>>;
 type Posts = Awaited<ReturnType<typeof getUserPosts>>;
@@ -109,7 +110,9 @@ function ProfilePageClient({
                 <h1 className="mt-4 text-2xl font-bold">
                   {user.name ?? user.username}
                 </h1>
-                <p className="text-muted-foreground">@{user.username}</p>
+                <p className="text-muted-foreground">
+                  {userHandle(user.username)}
+                </p>
                 <p className="mt-2 text-sm">{user.bio}</p>
 
                 {/* STATS */}
