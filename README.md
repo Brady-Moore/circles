@@ -32,7 +32,7 @@ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_key
 CLERK_SECRET_KEY=sk_test_key
 
 # https://neon.tech/
-DATABASE_URL="postgresql://neondb_owner:user@exampleneon.tech/neondb?sslmode=require"
+DATABASE_URL="postgresql://neondb_owner:user@example.neon.tech/neondb?sslmode=require"
 
 # https://uploadthing.com/
 UPLOADTHING_TOKEN='key'
