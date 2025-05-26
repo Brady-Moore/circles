@@ -14,12 +14,12 @@ const WelcomeCard = () => (
         Log in to view your profile and connect with others on Circles.
       </p>
       <SignInButton mode="modal">
-        <Button className="w-full mx-auto" variant="outline">
+        <Button className="w-full mx-auto" variant="default">
           Log In
         </Button>
       </SignInButton>
       <SignUpButton mode="modal">
-        <Button className="w-full mt-2" variant="default">
+        <Button className="w-full mt-2" variant="outline">
           Sign Up
         </Button>
       </SignUpButton>
