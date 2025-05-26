@@ -24,6 +24,26 @@ Install dependencies:
 npm install
 ```
 
+add .env file with the following keys
+
+```ini
+# https://clerk.com/
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_key
+CLERK_SECRET_KEY=sk_test_key
+
+# https://neon.tech/
+DATABASE_URL="postgresql://neondb_owner:user@exampleneon.tech/neondb?sslmode=require"
+
+# https://uploadthing.com/
+UPLOADTHING_TOKEN='key'
+```
+
+Generate prisma client:
+
+```bash
+npm run postinstall
+```
+
 Run the server:
 
 ```bash
@@ -36,4 +56,3 @@ npm run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
