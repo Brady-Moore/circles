@@ -13,7 +13,7 @@ A social media app that allows users to post comments, share screen shots, and o
 ![Postgres](https://img.shields.io/badge/PostgreSQL-%234169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-%232D3748?style=for-the-badge&logo=prisma&logoColor=white)
 
-### [Click here to try the app live!]([http://bradyweatherapp.netlify.app](https://circles-social-app.netlify.app/))
+### [Click here to try the app live!](https://circles-social-app.netlify.app/)
 
 ## Getting Started
 
