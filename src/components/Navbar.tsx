@@ -1,6 +1,7 @@
 import Link from "next/link";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from "./MobileNavbar";
+import Image from "next/image";
 
 async function Navbar() {
   return (
@@ -12,6 +13,13 @@ async function Navbar() {
               href="/"
               className="text-xl font-bold text-primary font-mono tracking-wider"
             >
+              <Image
+                src="/android-chrome-192x192.png"
+                alt="Circles logo"
+                width={60}
+                height={60}
+                className=" inline"
+              />
               Circles
             </Link>
           </div>
