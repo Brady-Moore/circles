@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import { Toaster } from "react-hot-toast";
 import { syncUser } from "@/actions/user";
+import WelcomeCard from "@/components/WelcomeCard";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ async function AuthComponent({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  await syncUser();
+  const user = await syncUser();
   return (
     <html lang="en">
       <body
@@ -48,6 +49,15 @@ async function AuthComponent({
                   <div className="hidden lg:block lg:col-span-3">
                     <Sidebar />
                   </div>
+
+                  {user ? (
+                    <></>
+                  ) : (
+                    <div className="col-span-6 max-w-2xl mx-auto">
+                      <WelcomeCard />
+                    </div>
+                  )}
+
                   <div className="lg:col-span-9">{children}</div>
                 </div>
               </div>
