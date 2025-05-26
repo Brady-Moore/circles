@@ -24,7 +24,7 @@ Install dependencies:
 npm install
 ```
 
-add .env file with the following keys
+Add an `.env` file with the following keys:
 
 ```ini
 # https://clerk.com/
