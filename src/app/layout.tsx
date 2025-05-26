@@ -49,9 +49,15 @@ async function AuthComponent({
                   <div className="hidden lg:block lg:col-span-3">
                     <Sidebar />
                   </div>
-                  <div className="lg:hidden">
-                    {user ? <></> : <WelcomeCard />}
-                  </div>
+
+                  {user ? (
+                    <></>
+                  ) : (
+                    <div className="col-span-6 max-w-2xl mx-auto">
+                      <WelcomeCard />
+                    </div>
+                  )}
+
                   <div className="lg:col-span-9">{children}</div>
                 </div>
               </div>

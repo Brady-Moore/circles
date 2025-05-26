@@ -10,10 +10,10 @@ import WelcomeCard from "./WelcomeCard";
 
 async function Sidebar() {
   const authUser = await currentUser();
-  if (!authUser) return <UnauthenticatedSidebar />;
+  if (!authUser) return null;
 
   const user = await getUserByClerkId(authUser.id);
-  if (!user) return null;
+  if (!authUser || !user) return null;
 
   return (
     <div className="sticky top-20">
@@ -84,9 +84,3 @@ async function Sidebar() {
 }
 
 export default Sidebar;
-
-const UnauthenticatedSidebar = () => (
-  <div className="sticky top-20">
-    <WelcomeCard />
-  </div>
-);
