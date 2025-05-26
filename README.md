@@ -15,7 +15,7 @@ A social media app that allows users to post comments, share screen shots, and o
 
 ### [Click here to try the app live!](https://circles-social-app.netlify.app/)
 
-## Getting Started
+## Local Development
 
 Install dependencies:
 
