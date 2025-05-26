@@ -1,4 +1,4 @@
-### Circles Social Media App
+# Circles Social Media App
 
 A social media app that allows users to post comments, share screen shots, and other common social media functions.
 
